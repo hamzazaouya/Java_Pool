@@ -5,17 +5,9 @@ public class HourlyEmployee extends Employee {
 
     private int workingHours;
     private int hourRate;
-    private int salary;
 
-    public HourlyEmployee () {
-        workingHours = 0;
-        hourRate = 0;
-        this.type = "Hourly";
-    }
-
-    public HourlyEmployee(String name, int age, int wh, int hr) {
-        super(name, age);
-        this.workingHours = wh;
+    public HourlyEmployee(String name, int age,int hr) {
+        super("Hourly", name, age);
         this.hourRate = hr;
     }
 
@@ -27,16 +19,26 @@ public class HourlyEmployee extends Employee {
         return (this.hourRate);
     }
 
-    public int getSalary() {
-        return (this.salary);
-    }
-
+    
     public void setWorkingHours (int workingHours) {
         this.workingHours = workingHours;
     }
-
+    
     public void setHourRate (int hourRate) {
         this.hourRate = hourRate;
     }
+    
+    @Override
+    public int getSalary() {
+        this.salary = this.hourRate * this.workingHours;
+        return (this.salary);
+    }
 
+    @Override
+    public void print_all_details () {
+        super.print_all_details();
+        System.out.println("HourRate : " + hourRate);
+        System.out.println("Working Hours : " + workingHours);
+        System.out.println("Salary: " + salary);
+    }
 }

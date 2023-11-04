@@ -16,19 +16,16 @@ public class Person {
         this.age = age;
     }
 
-    public String getName() {
+    public final String getName() {
         return (this.name);
     }
 
-    public int getAge() {
+    public final int getAge() {
         return (this.age);
     }
 
-    public void setAge (int age) {
-        this.age = age;
-    }
-
-    public void setName (String name) {
-        this.name = name;
+    public void print_all_details () {
+        System.out.println("Name : \033[0;32m " + this.name + "\033[0m");
+        System.out.println("Age : " + this.age);
     }
 }

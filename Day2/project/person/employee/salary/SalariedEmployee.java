@@ -2,33 +2,42 @@ package person.employee.salary;
 import person.employee.Employee;
 
 public class SalariedEmployee extends Employee {
-    private int salary;
     private int bonus;
+    private int deductions;
 
-    public SalariedEmployee () {
-        this.salary = 0;
-        this.bonus = 0;
-        this.type = "Salary";
-    }
-    public SalariedEmployee (String name, int age, int salary, int bn) {
-        super(name, age);
+    public SalariedEmployee (String name, int age, int salary) {
+        super("Salary", name, age);
         this.salary = salary;
-        this.bonus = bn;
+        this.deductions = 0;
     }
 
-    public int getSalary () {
-        return (this.salary);
-    }
-
+    
     public int getBonus () {
         return (this.bonus);
     }
-
-    public void setSalary (int salary) {
-        this.salary = salary;
-    }
-
+    
     public void setBonus (int bn) {
         this.bonus += bn;
+    }
+    
+    public void setDeductions (int deductions) {
+        this.deductions += deductions;
+    }
+    
+    public int getDeductions () {
+        return (this.deductions);
+    }
+
+    @Override
+    public int getSalary () {
+        return (salary + bonus - deductions);
+    }
+
+    @Override
+    public void print_all_details() {
+        super.print_all_details();
+        System.out.println("Bonus : " + bonus);
+        System.out.println("Deductions : " + deductions);
+        System.out.println("Salary : " + salary);
     }
 }

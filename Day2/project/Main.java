@@ -3,44 +3,25 @@ import person.employee.hourly.HourlyEmployee;
 
 public class Main {
   public static void main(String [] args) {
-    SalariedEmployee se1 = new SalariedEmployee();
-    se1.setName ("Hamza");
-    se1.setAge (26);
-    se1.setSalary(3000);
+    SalariedEmployee se1 = new SalariedEmployee("Hamza", 26, 4000);
     se1.setBonus(300);
-    SalariedEmployee se2 = new SalariedEmployee("Amal", 35, 70000, 1000);
+    se1.setBonus(100);
+    se1.setDeductions(50);
+    SalariedEmployee se2 = new SalariedEmployee("Amal", 35, 70000);
+    se2.setBonus(500);
+    se2.setBonus(200);
+    se2.setDeductions(300);
+    HourlyEmployee he1 = new HourlyEmployee("Karim", 18, 30);
+    he1.setWorkingHours(120);
+    HourlyEmployee he2 = new HourlyEmployee("Kamal", 40, 45);
+    he2.setWorkingHours(75);
 
-    HourlyEmployee he1 = new HourlyEmployee("Karim", 18, 20, 30);
-    HourlyEmployee he2 = new HourlyEmployee();
-
-    he2.setName("Kamal");
-    he2.setAge(40);
-    he2.setHourRate(45);
-    he2.setWorkingHours(100);
-
-    System.out.println("Name : " + se1.getName());
-    System.out.println("Age : " + se1.getAge());
-    System.out.println("Id : " + se1.getEmployeeId());
-    System.out.println("Salary : " + se1.getSalary());
-    System.out.println("Bonus : " + se1.getBonus());
+    se1.print_all_details();
     System.out.println("----------------------------------");
-    System.out.println("Name : " + se2.getName());
-    System.out.println("Age : " + se2.getAge());
-    System.out.println("Id : " + se2.getEmployeeId());
-    System.out.println("Salary : " + se2.getSalary());
-    System.out.println("Bonus : " + se2.getBonus());
+    se2.print_all_details();
     System.out.println("----------------------------------");
-    System.out.println("Name : " + he1.getName());
-    System.out.println("Age : " + he1.getAge());
-    System.out.println("Id : " + he1.getEmployeeId());
-    System.out.println("HourRate : " + he1.getHourRate());
-    System.out.println("Working Hours : " + he1.getWorkingHours());
-     System.out.println("----------------------------------");
-     System.out.println("Name : " + he2.getName());
-    System.out.println("Age : " + he2.getAge());
-    System.out.println("Id : " + he2.getEmployeeId());
-    System.out.println("HourRate : " + he2.getHourRate());
-    System.out.println("Working Hours : " + he2.getWorkingHours());
-    
+    he1.print_all_details();
+    System.out.println("----------------------------------");
+    he2.print_all_details();
   }
 }

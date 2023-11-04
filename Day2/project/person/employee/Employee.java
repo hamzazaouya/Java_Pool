@@ -4,18 +4,16 @@ import person.Person;
 public class Employee extends Person {
     protected static int id;
     protected int employeeId;
+    protected int salary;
     protected String type;
-
-    public Employee () { 
-        this.employeeId = ++id;
-    }
     
-    public Employee(String name, int age) {
+    public Employee(String type, String name, int age) {
         super(name, age);
+        this.type = type;
         this.employeeId = ++id;
     }
 
-    public int getEmployeeId () {
+    public final int getEmployeeId () {
         return (this.employeeId);
     }
 
@@ -23,11 +21,22 @@ public class Employee extends Person {
         return (id);
     }
 
-    public void setType (String type) {
+    public final void setType (String type) {
         this.type = type;
     }
 
-    public String getType () {
+    public final String getType () {
         return this.type;
+    }
+
+    public int getSalary () {
+        return (this.salary);
+    }
+
+    @Override
+    public void print_all_details() {
+        super.print_all_details();
+        System.out.println("Type : " + type);
+        System.out.println("Id : " + id);
     }
 }
