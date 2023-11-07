@@ -1,7 +1,7 @@
 package person.employee;
 import person.Person;
 
-public class Employee extends Person {
+public abstract class Employee extends Person {
     protected static int id;
     protected int employeeId;
     protected int salary;
@@ -29,9 +29,7 @@ public class Employee extends Person {
         return this.type;
     }
 
-    public int getSalary () {
-        return (this.salary);
-    }
+    public abstract int getSalary ();
 
     @Override
     public void print_all_details() {

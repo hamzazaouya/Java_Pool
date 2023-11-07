@@ -28,7 +28,7 @@ public class HourlyEmployee extends Employee {
         this.hourRate = hourRate;
     }
     
-    @Override
+    
     public int getSalary() {
         this.salary = this.hourRate * this.workingHours;
         return (this.salary);
